@@ -11,7 +11,27 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     ''
     """
     ciphertext = ""
-    # PUT YOUR CODE HERE
+    alphabet_en_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alphabet_en_lower = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+    for i in plaintext:
+        if i.isupper():
+            place = alphabet_en_upper.find(i)
+            new_place = place + shift
+            if i in alphabet_en_upper:
+                ciphertext += alphabet_en_upper[new_place]
+            elif plaintext == '""':
+                ciphertext += "''"
+            else:
+                ciphertext += i
+        else:
+            place = alphabet_en_lower.find(i)
+            new_place = place + shift
+            if i in alphabet_en_lower:
+                ciphertext += alphabet_en_lower[new_place]
+            elif plaintext == '""':
+                ciphertext += "''"
+            else:
+                ciphertext += i
     return ciphertext
 
 
@@ -28,5 +48,23 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     ''
     """
     plaintext = ""
-    # PUT YOUR CODE HERE
+        for i in plaintext:
+        if i.isupper():
+            place = alphabet_en_upper.find(i)
+            new_place = place + shift
+            if i in alphabet_en_upper:
+                ciphertext += alphabet_en_upper[new_place]
+            elif plaintext == '""':
+                ciphertext += "''"
+            else:
+                ciphertext += i
+        else:
+            place = alphabet_en_lower.find(i)
+            new_place = place + shift
+            if i in alphabet_en_lower:
+                ciphertext += alphabet_en_lower[new_place]
+            elif plaintext == '""':
+                ciphertext += "''"
+            else:
+                ciphertext += i
     return plaintext
