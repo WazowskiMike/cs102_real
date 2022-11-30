@@ -27,7 +27,11 @@ def gcd(a: int, b: int) -> int:
     >>> gcd(3, 7)
     1
     """
-    # PUT YOUR CODE HERE
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
     pass
 
 
